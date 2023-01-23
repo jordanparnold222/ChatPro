@@ -12,10 +12,30 @@
 }
 
 .navbar-button {
+<<<<<<< Updated upstream
   background-color: grey;
   border: none;
   color: white;
   cursor: pointer;
+=======
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  background-size: 10%;
+  background-repeat: no-repeat;
+}
+.navbar-submit {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  translate: 0.5vh;
+  background-size: 10%;
+  background-repeat: no-repeat;
+  transform: translateY(-10px);
+>>>>>>> Stashed changes
 }
 
 .navbar-right {
@@ -43,6 +63,10 @@
   min-height: 20vh;
   min-width: 30vh;
   overflow-y: scroll;
+<<<<<<< Updated upstream
+=======
+  z-index: 10;
+>>>>>>> Stashed changes
 }
 .sent {
   background-color: #3498db;
@@ -51,6 +75,10 @@
   max-width: 80%;
   margin-left: 20%;
   margin-bottom: 5px;
+<<<<<<< Updated upstream
+=======
+  border-radius: 10px;
+>>>>>>> Stashed changes
 }
 
 .received {
@@ -59,6 +87,7 @@
   border: 1px solid #ccc;
   max-width: 80%;
   margin-bottom: 5px;
+<<<<<<< Updated upstream
 }
 .navbar-input-container {
   margin-top: 50vh;
@@ -68,4 +97,31 @@
   min-width: 30vh;
   background-color: lightblue;
   translate: 164vh;
+=======
+  border-radius: 10px;
+}
+.navbar-input-container {
+  margin-top: 49vh;
+  margin-left: 9.5vh;
+  position: fixed;
+  border: 0.4vh solid lightblue;
+  min-width: 30vh;
+  background-color: lightblue;
+  translate: 164vh;
+  z-index: 10;
+}
+.navbar-text-time {
+  font-size: 0.7rem;
+
+  margin-left: 0.5rem;
+}
+.navbar-text .timestamp {
+  font-size: 12px;
+  text-align: left;
+  margin-top: 4px;
+}
+
+.sent .timestamp {
+  text-align: right;
+>>>>>>> Stashed changes
 }

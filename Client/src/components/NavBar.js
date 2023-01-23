@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import "./Navbar.css";
+<<<<<<< Updated upstream
+=======
+import SignIn from "./SignIn";
+>>>>>>> Stashed changes
 
 class NavBar extends Component {
   constructor(props) {
@@ -11,6 +15,10 @@ class NavBar extends Component {
       chat: [],
       input: "",
     };
+<<<<<<< Updated upstream
+=======
+    this.dropdownRef = React.createRef();
+>>>>>>> Stashed changes
   }
 
   toggleDropdown = () => {
@@ -25,14 +33,22 @@ class NavBar extends Component {
 
   handleSubmit = () => {
     const { texts, input } = this.state;
+<<<<<<< Updated upstream
     this.setState({
       texts: [...texts, { text: input, time: new Date() }],
+=======
+    const time = new Date();
+    const time_string = `Sent ${time.toLocaleDateString()} at ${time.toLocaleTimeString()}`;
+    this.setState({
+      texts: [...texts, { text: input, time, time_string }],
+>>>>>>> Stashed changes
       input: "",
     });
   };
 
   handleSubmit2 = () => {
     const { texts_recieved, input } = this.state;
+<<<<<<< Updated upstream
     this.setState({
       texts_recieved: [...texts_recieved, { text: input, time: new Date() }],
       input: "",
@@ -40,6 +56,23 @@ class NavBar extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
+=======
+    const time = new Date();
+    const time_string = `Received ${time.toLocaleDateString()} at ${time.toLocaleTimeString()}`;
+    this.setState({
+      texts_recieved: [...texts_recieved, { text: input, time, time_string }],
+      input: "",
+    });
+  };
+  componentDidMount() {
+    this.dropdownRef = React.createRef();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.chat !== this.state.chat) {
+      this.dropdownRef.current.scrollTop =
+        this.dropdownRef.current.scrollHeight;
+    }
+>>>>>>> Stashed changes
     if (
       prevState.texts !== this.state.texts ||
       prevState.texts_recieved !== this.state.texts_recieved
@@ -52,9 +85,16 @@ class NavBar extends Component {
         );
       chat.sort((a, b) => new Date(a.time) - new Date(b.time));
       this.setState({ chat });
+<<<<<<< Updated upstream
     }
   }
 
+=======
+      this.dropdownRef.current.scrollTop =
+        this.dropdownRef.current.scrollHeight;
+    }
+  }
+>>>>>>> Stashed changes
   render() {
     const { chat } = this.state;
     return (
@@ -67,11 +107,23 @@ class NavBar extends Component {
         </div>
         <div className="navbar-right">
           <button className="navbar-button" onClick={this.toggleDropdown}>
+<<<<<<< Updated upstream
             Chat
           </button>
 
           {this.state.dropdownOpen && (
             <div className="navbar-dropdown">
+=======
+            <img
+              src={require("./chat.png")}
+              alt="image button"
+              width="50"
+              height="50"
+            />
+          </button>
+          {this.state.dropdownOpen && (
+            <div className="navbar-dropdown" ref={this.dropdownRef}>
+>>>>>>> Stashed changes
               {chat.map((item, index) => (
                 <div
                   key={index}
@@ -80,14 +132,32 @@ class NavBar extends Component {
                   }`}
                 >
                   {item.text}
+<<<<<<< Updated upstream
                 </div>
               ))}
               <div></div>
+=======
+                  <div className="timestamp">
+                    {item.sender === "sent" ? "Sent " : "Received "}
+                    {new Date(item.time).toLocaleString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                    })}{" "}
+                    at{" "}
+                    {new Date(item.time).toLocaleString("en-US", {
+                      hour: "numeric",
+                      minute: "numeric",
+                    })}
+                  </div>
+                </div>
+              ))}
+>>>>>>> Stashed changes
             </div>
           )}
         </div>
         {this.state.dropdownOpen && (
           <div className="navbar-input-container">
+<<<<<<< Updated upstream
             <input
               className="navbar-input"
               type="text"
@@ -97,6 +167,24 @@ class NavBar extends Component {
             />
             <button className="navbar-submit" onClick={this.handleSubmit}>
               Send
+=======
+            <textarea
+              className="navbar-input"
+              placeholder="Enter new text"
+              value={this.state.input}
+              onChange={this.handleInput}
+              rows={1}
+              cols={18}
+              style={{ resize: "none", overflow: "auto" }}
+            />
+            <button className="navbar-submit" onClick={this.handleSubmit}>
+              <img
+                src={require("./send.png")}
+                alt="image button"
+                width="40"
+                height="40"
+              />
+>>>>>>> Stashed changes
             </button>
           </div>
         )}
@@ -104,5 +192,8 @@ class NavBar extends Component {
     );
   }
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 export default NavBar;
