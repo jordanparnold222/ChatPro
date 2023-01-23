@@ -1,0 +1,102 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #3498db;
+}
+
+.navbar-title {
+  margin: 0;
+  color: white;
+}
+
+.navbar-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  background-size: 10%;
+  background-repeat: no-repeat;
+}
+.navbar-submit {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  translate: 0.5vh;
+  background-size: 10%;
+  background-repeat: no-repeat;
+  transform: translateY(-10px);
+}
+
+.navbar-right {
+  position: relative;
+}
+
+.navbar-dropdown {
+  position: absolute;
+  background-color: lightblue;
+  top: 100%;
+  right: 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  max-height: 15vh;
+  overflow-y: scroll;
+}
+
+.navbar-input {
+  border: 1px solid #ccc;
+}
+.navbar-dropdown {
+  max-height: 20vh;
+  min-height: 20vh;
+  min-width: 30vh;
+  overflow-y: scroll;
+  z-index: 10;
+}
+.sent {
+  background-color: #3498db;
+  text-align: right;
+  border: 1px solid #ccc;
+  max-width: 80%;
+  margin-left: 20%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.received {
+  background-color: lightgreen;
+  text-align: left;
+  border: 1px solid #ccc;
+  max-width: 80%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+.navbar-input-container {
+  margin-top: 49vh;
+  margin-left: 9.5vh;
+  position: fixed;
+  border: 0.4vh solid lightblue;
+  min-width: 30vh;
+  background-color: lightblue;
+  translate: 164vh;
+  z-index: 10;
+}
+.navbar-text-time {
+  font-size: 0.7rem;
+
+  margin-left: 0.5rem;
+}
+.navbar-text .timestamp {
+  font-size: 12px;
+  text-align: left;
+  margin-top: 4px;
+}
+
+.sent .timestamp {
+  text-align: right;
+}
