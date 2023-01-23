@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600&display=swap");
+.share-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(160%, 190%);
+}
+.content-share {
+  padding: 13px 16px;
+  display: flex;
+  width: 145%;
+  border: 2px solid #eae2e1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.content.share-active {
+  border-color: #f9b9c4;
+  background: #fbd0d8;
+}
+.share {
+  position: absolute;
+  background: url("./share-img.png") no-repeat;
+  background-position: left;
+  background-size: 29%;
+  height: 200%;
+  width: 200%;
+  top: 50%;
+  left: -120%;
+  transform: translate(100%, -50%);
+}
+.share-text {
+  font-size: 21px;
+  margin-left: 0px;
+
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+}
+.numb-share:before {
+  content: "";
+  font-size: 21px;
+  margin-left: 7px;
+  font-weight: 600;
+  color: #9c9496;
+  font-family: sans-serif;
+}
+.numb.share-active:before {
+  content: "";
+  color: #9c9496;
+}
+.text.share-active {
+  color: #000;
+}
+.heart.share-active {
+  animation: animate 0.8s steps(28) 1;
+  background-position: right;
+  animation-fill-mode: forwards;
+}
+@keyframes animate {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
