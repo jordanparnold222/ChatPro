@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatPro", "ChatPro\ChatPro.csproj", "{7F0EBEC4-0956-44B3-84B2-5CB11E81BB1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatPro", "ChatPro\ChatPro.csproj", "{019DA35E-55AE-44EA-A02A-E3A1300AD691}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7F0EBEC4-0956-44B3-84B2-5CB11E81BB1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F0EBEC4-0956-44B3-84B2-5CB11E81BB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F0EBEC4-0956-44B3-84B2-5CB11E81BB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F0EBEC4-0956-44B3-84B2-5CB11E81BB1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{019DA35E-55AE-44EA-A02A-E3A1300AD691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{019DA35E-55AE-44EA-A02A-E3A1300AD691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{019DA35E-55AE-44EA-A02A-E3A1300AD691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{019DA35E-55AE-44EA-A02A-E3A1300AD691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6C842ABB-852E-4E59-AD1C-B441C379EA8F}
+		SolutionGuid = {B0FB70F0-9755-4527-B63A-680ECC02A6E0}
 	EndGlobalSection
 EndGlobal
