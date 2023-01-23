@@ -1,3 +1,4 @@
+import { withRouter } from "react-router-dom";
 import React from "react";
 import {
   Container,
@@ -10,6 +11,8 @@ import {
   FormInput,
   FormButton,
   Text,
+  NavBtn,
+  NavBtnLink,
 } from "./SigninElements";
 
 const SignIn = () => {
@@ -24,7 +27,10 @@ const SignIn = () => {
               <FormInput type="email" required />
               <FormLabel htmlFor="for">Password</FormLabel>
               <FormInput type="password" required />
-              <FormButton type="submit">Continue</FormButton>
+              <NavBtnLink to="/homepage" type="submit">
+                Continue
+              </NavBtnLink>
+
               <Text>Forgot password</Text>
             </Form>
           </FormContent>

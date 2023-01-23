@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Navbar.css";
-import SignIn from "./SignIn";
 
 class NavBar extends Component {
   constructor(props) {

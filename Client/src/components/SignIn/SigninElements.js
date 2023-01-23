@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Link as LinkR } from "react-router-dom";
 
 export const Container = styled.div`
   min-height: 692px;
@@ -7,13 +8,42 @@ export const Container = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  top: 9%;
+  top: 0;
   z-index: 0;
   overflow: hidden;
   background: #3498db;
-  border: 0.4vh solid lightblue;
+`;
+export const NavBtn = styled.nav`
+  background: #01bf71;
+  padding: 16px 0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+  }
 `;
 
+export const NavBtnLink = styled(LinkR)`
+  background: #01bf71;
+  padding: 16px 0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+  }
+`;
 export const FormWrap = styled.div`
   height: 100%;
   display: flex;
