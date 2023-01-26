@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./share.css";
 
-const ShareButton = ({ isExpanded }) => {
+const ShareButton = () => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleClick = () => {
@@ -10,10 +10,7 @@ const ShareButton = ({ isExpanded }) => {
   };
 
   return (
-    <div
-      className={isExpanded ? "expanded-share-btn" : "share-btn"}
-      onClick={handleClick}
-    >
+    <div className={`share-btn`} onClick={handleClick}>
       <div className="content-share">
         <span className="share"></span>
         <span className="share-text">Share</span>

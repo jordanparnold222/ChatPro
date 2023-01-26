@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const LikeButton = ({ isExpanded }) => {
+const LikeButton = () => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleClick = () => {
@@ -11,15 +11,13 @@ const LikeButton = ({ isExpanded }) => {
 
   return (
     <div
-      className={`heart-btn ${isLiked ? "heart-active" : ""} ${
-        isExpanded ? "expanded-heart-button" : "heart-btn"
-      }`}
+      className={`like-btn ${isLiked ? "like-active" : ""}`}
       onClick={handleClick}
     >
-      <div className="content">
-        <span className={`heart ${isLiked ? "heart-active" : ""}`}></span>
+      <div className="like-content">
+        <span className={`like ${isLiked ? "like-active" : ""}`}></span>
         <span className="text">Like</span>
-        <span className={`numb ${isLiked ? "heart-active" : ""}`}></span>
+        <span className={`numb ${isLiked ? "like-active" : ""}`}></span>
       </div>
     </div>
   );

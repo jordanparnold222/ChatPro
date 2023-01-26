@@ -5,6 +5,8 @@
   padding: 16px;
   background-color: #15171c;
   z-index: 10;
+  width: 100%;
+  position: fixed;
 }
 
 .navbar-title {

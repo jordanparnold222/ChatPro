@@ -4,6 +4,7 @@ import "./App.css";
 import LikeButton from "../LikeButton";
 import CommentButton from "../CommentButton";
 import ShareButton from "../ShareButton";
+import { CommentFeed } from "./CommentFeed/CommentFeed";
 
 export const FeedCard = ({ link, title, description, imgUrl }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -14,7 +15,7 @@ export const FeedCard = ({ link, title, description, imgUrl }) => {
 
   return (
     <Col size={1} sm={10} md={10}>
-      <div className="proj-imgbx">
+      <div className={isExpanded ? "proj-imgbx-dropdown" : "proj-imgbx"}>
         <img
           className="profile-picture"
           src={require("./blank-profile.PNG")}
@@ -27,10 +28,22 @@ export const FeedCard = ({ link, title, description, imgUrl }) => {
           <div className="description-textbox">
             <p>{description}</p>
           </div>
-          <LikeButton />
-          <CommentButton onCommentClick={handleCommentClick} />
-          {isExpanded && <input type="text" placeholder="Leave a comment..." />}
-          <ShareButton />
+          <LikeButton isExpanded={isExpanded} />
+          <CommentButton
+            isExpanded={isExpanded}
+            onCommentClick={handleCommentClick}
+          />
+
+          {isExpanded && <CommentFeed />}
+          {isExpanded && (
+            <input
+              className="comment-input"
+              type="text"
+              placeholder="Leave a comment..."
+            />
+          )}
+
+          <ShareButton isExpanded={isExpanded} />
         </div>
       </div>
     </Col>
