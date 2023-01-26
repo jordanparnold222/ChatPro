@@ -2,6 +2,7 @@
   padding: 80px 0;
   position: relative;
   background-color: black;
+  margin-top: 3%;
 }
 .project h2 {
   font-size: 45px;
@@ -79,7 +80,20 @@
   min-height: 400px;
   margin-left: 20%;
 }
-
+.proj-imgbx-dropdown {
+  position: relative;
+  border-radius: 30px;
+  background: #15171c;
+  margin-bottom: 24px;
+  min-width: 100px;
+  min-height: 800px;
+  margin-left: 20%;
+}
+.comment-input {
+  margin-top: 2%;
+  margin-left: 25%;
+  width: 50%;
+}
 .proj-imgbx:hover::before {
   height: 100%;
 }
