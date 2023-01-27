@@ -132,3 +132,4 @@ export const Text = styled.span`
   color: #fff;
   font-size: 14px;
 `;
+export const baseUrl = "https://localhost:7210/";
