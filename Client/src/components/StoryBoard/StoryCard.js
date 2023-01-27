@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Col } from "react-bootstrap";
-import "./App.css";
+import "./StoryBoard.css";
 import LikeButton from "../LikeButton";
 import CommentButton from "../CommentButton";
 import ShareButton from "../ShareButton";
 import { CommentFeed } from "./CommentFeed/CommentFeed";
 
-export const FeedCard = ({
+export const StoryCard = ({
   link,
   title,
   description,
