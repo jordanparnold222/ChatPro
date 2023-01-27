@@ -2,17 +2,18 @@ import React from "react";
 import Sidebar from "../../Sidebar/Sidebar";
 import Messagebar from "../../Messagebar/Messagebar";
 import NavBar from "../../NavBar/NavBar";
-import { NewsFeed } from "../../NewsFeed/NewsFeed";
+import { StoryBoard } from "../../StoryBoard/StoryBoard";
 
-function Homepage() {
+function UserPage() {
   return (
     <div>
       <NavBar />
       <Sidebar />
-      <NewsFeed />
+      <StoryBoard />
       <Messagebar />
+      <div className="UserPage">UserPage</div>
     </div>
   );
 }
 
-export default Homepage;
+export default UserPage;

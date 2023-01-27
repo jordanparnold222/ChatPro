@@ -1,54 +1,56 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:600&display=swap");
-.like-btn {
+.share-btn2 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-140%, 145%);
+  transform: translate(160%, 190%);
 }
-.like-content {
-  padding: 1px 16px;
+.content-share2 {
+  padding: 13px 16px;
   display: flex;
+  width: 145%;
   border: 2px solid #eae2e1;
   border-radius: 5px;
   cursor: pointer;
 }
-.content.heart-active {
+.content.share-active2 {
   border-color: #f9b9c4;
   background: #fbd0d8;
 }
-.like {
+.share2 {
   position: absolute;
-  background: url("./img.png") no-repeat;
+  background: url("./share-img.png") no-repeat;
   background-position: left;
-  background-size: 2900%;
-  height: 50px;
-  width: 50px;
+  background-size: 29%;
+  height: 200%;
+  width: 200%;
   top: 50%;
-  left: 21%;
-  transform: translate(-50%, -50%);
+  left: -120%;
+  transform: translate(100%, -50%);
 }
-.text {
+.share-text2 {
   font-size: 21px;
-  margin-left: 30px;
+  margin-left: 0px;
+
   color: grey;
   font-family: "Montserrat", sans-serif;
 }
-.numb:before {
-  content: "0";
+.numb-share:before2 {
+  content: "";
   font-size: 21px;
   margin-left: 7px;
   font-weight: 600;
   color: #9c9496;
   font-family: sans-serif;
 }
-.numb.heart-active:before {
-  content: "1";
+.numb.share-active:before2 {
+  content: "";
   color: #9c9496;
 }
-.text.heart-active {
+.text.share-active2 {
   color: #000;
 }
-.heart.heart-active {
+.heart.share-active2 {
   animation: animate 0.8s steps(28) 1;
   background-position: right;
   animation-fill-mode: forwards;
