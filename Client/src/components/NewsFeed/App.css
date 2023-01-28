@@ -86,13 +86,25 @@
   background: #15171c;
   margin-bottom: 24px;
   min-width: 100px;
-  min-height: 800px;
+  min-height: 1000px;
   margin-left: 20%;
 }
 .comment-input {
   margin-top: 2%;
   margin-left: 25%;
   width: 50%;
+}
+.coment-area {
+  resize: none;
+  color: #fff;
+  position: relative;
+  border-radius: 30px;
+  background: #30353f;
+  margin-bottom: 24px;
+  min-width: 40%;
+  min-height: 12vh;
+  margin-left: 30%;
+  border: 2px solid #eae2e1;
 }
 .proj-imgbx:hover::before {
   height: 100%;

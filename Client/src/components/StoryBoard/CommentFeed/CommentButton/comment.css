@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600&display=swap");
+.comment-btn2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-55%, 190%);
+}
+.content2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content.comment-active2 {
+  border-color: #f9b9c4;
+  background: #fbd0d8;
+}
+.comment2 {
+  position: absolute;
+
+  background-position: left;
+  background-size: 2900%;
+  height: 70px;
+  width: 70px;
+  top: 50%;
+  left: 21%;
+  transform: translate(-50%, -50%);
+}
+.comment-text2 {
+  font-size: 21px;
+  text-align: center;
+  color: grey;
+  font-family: "Montserrat", sans-serif;
+  transform: translate(-5%, 0%);
+}
+.numb:before2 {
+  content: "0";
+  font-size: 21px;
+
+  font-weight: 600;
+  color: #9c9496;
+  font-family: sans-serif;
+}
+.numb.comment-active:before2 {
+  content: "1";
+  color: #9c9496;
+}
+.text.comment-active2 {
+  color: #000;
+}
+.heart.comment-active2 {
+  animation: animate 0.8s steps(28) 1;
+  background-position: right;
+  animation-fill-mode: forwards;
+}
+@keyframes animate {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}

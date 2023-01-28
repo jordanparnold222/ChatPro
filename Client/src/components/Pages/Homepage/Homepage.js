@@ -11,7 +11,6 @@ function Homepage() {
       <Sidebar />
       <NewsFeed />
       <Messagebar />
-      <div className="Homepage">Homepage</div>
     </div>
   );
 }

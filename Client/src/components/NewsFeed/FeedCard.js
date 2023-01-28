@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col } from "react-bootstrap";
 import "./App.css";
 import LikeButton from "../LikeButton";
@@ -6,8 +6,22 @@ import CommentButton from "../CommentButton";
 import ShareButton from "../ShareButton";
 import { CommentFeed } from "./CommentFeed/CommentFeed";
 
-export const FeedCard = ({ link, title, description, imgUrl }) => {
+export const FeedCard = ({
+  link,
+  title,
+  description,
+  imgUrl,
+  comments,
+  setComments,
+  handleSubmitComment,
+  projects,
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    console.log("comments state changed, re-rendering component");
+    console.log(comments);
+  }, [comments]);
 
   const handleCommentClick = () => {
     setIsExpanded(!isExpanded);
@@ -34,13 +48,21 @@ export const FeedCard = ({ link, title, description, imgUrl }) => {
             onCommentClick={handleCommentClick}
           />
 
-          {isExpanded && <CommentFeed />}
           {isExpanded && (
-            <input
-              className="comment-input"
-              type="text"
-              placeholder="Leave a comment..."
+            <CommentFeed
+              comments={comments}
+              handleSubmitComment={handleSubmitComment}
             />
+          )}
+          {isExpanded && (
+            <div>
+              <textarea
+                className="coment-area"
+                rows={4}
+                placeholder="Leave a comment..."
+              />
+              <button onClick={handleSubmitComment}>Submit</button>
+            </div>
           )}
 
           <ShareButton isExpanded={isExpanded} />
