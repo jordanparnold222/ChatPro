@@ -10,3 +10,4 @@ API/ChatPro/.vs/ChatPro/v17/.suo
 *.vsidx
 *.suo
 API/ChatPro/ChatPro/obj/Debug/net6.0/ChatPro.GeneratedMSBuildEditorConfig.editorconfig
+API/ChatPro/ChatPro/bin/Debug/net6.0/ChatPro.dll
