@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ia9sztxXc/LpliAtMmw6CyrDXlFTVXw+Xtl3RXEq806fwbev3Pk9BI3pxzkmJtRewS4+g6zYLYs4SPqbnwnavQ==",
+  "dgSpecHash": "rO2egtLZ9hYki/nJ3lv8u82/Q8Y/83yw45UCbg7qNFFWkob2twkiQCKBFJHj+h1T+dfrKHTJt3x22a7xm1xU5Q==",
   "success": true,
-  "projectFilePath": "E:\\Jordan\\Documents\\GitHub\\IMSocial\\API\\ChatPro\\ChatPro\\ChatPro.csproj",
+  "projectFilePath": "E:\\Jordan\\Documents\\GitHub\\IMSocial\\api\\chatpro\\chatpro\\ChatPro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pjord\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\pjord\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

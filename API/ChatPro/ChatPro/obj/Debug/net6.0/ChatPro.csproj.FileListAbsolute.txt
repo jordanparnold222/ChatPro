@@ -584,3 +584,8 @@ E:\Jordan\Documents\GitHub\IMSocial\API\chatpro\chatpro\obj\Debug\net6.0\refint\
 E:\Jordan\Documents\GitHub\IMSocial\API\chatpro\chatpro\obj\Debug\net6.0\ChatPro.pdb
 E:\Jordan\Documents\GitHub\IMSocial\API\chatpro\chatpro\obj\Debug\net6.0\ChatPro.genruntimeconfig.cache
 E:\Jordan\Documents\GitHub\IMSocial\API\chatpro\chatpro\obj\Debug\net6.0\ref\ChatPro.dll
+E:\Jordan\Documents\GitHub\IMSocial\api\chatpro\chatpro\obj\Debug\net6.0\staticwebassets\msbuild.ChatPro.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Jordan\Documents\GitHub\IMSocial\api\chatpro\chatpro\obj\Debug\net6.0\staticwebassets\msbuild.build.ChatPro.props
+E:\Jordan\Documents\GitHub\IMSocial\api\chatpro\chatpro\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ChatPro.props
+E:\Jordan\Documents\GitHub\IMSocial\api\chatpro\chatpro\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ChatPro.props
+E:\Jordan\Documents\GitHub\IMSocial\api\chatpro\chatpro\obj\Debug\net6.0\staticwebassets.pack.json

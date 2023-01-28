@@ -15,6 +15,7 @@ import {
   NavBtnLink,
   baseUrl,
 } from "./SigninElements";
+import axios from 'axios'
 
 
 
@@ -23,11 +24,11 @@ class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      FirstName: '',
-      LastName: '',
-      Username: '',
-      Email: '',
-      Password: '',
+      FirstName: 'Jon',
+      LastName: 'Doe',
+      Username: 'johndoe',
+      Email: 'johndoe@example.com',
+      Password: 'password',
     };
   }
 
@@ -42,24 +43,20 @@ class SignIn extends React.Component {
     handleSubmit = (event) => {
       event.preventDefault();
       const user = {
-        FirstName: this.state.firstName,
-        LastName: this.state.lastName,
-        Username: this.state.username,
-        Email: this.state.email,
-        Password: this.state.password,
+          FirstName: this.state.firstName,
+          LastName: this.state.lastName,
+          Username: this.state.username,
+          Email: this.state.email,
+          Password: this.state.password,
       };
-      fetch(baseUrl + 'api/Users', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(user),
+      axios.post(baseUrl + 'api/Users', user)
+      .then(response => {
+          console.log('Success:', response.data);
       })
-      .then(response => response.json())
-      .then(data => {
-          console.log('Success:', data);
-      })
-      .catch((error) => {
+      .catch(error => {
           console.error('Error:', error);
       });
+      console.log(this.state.FirstName)
   }
   
   render() {
@@ -75,24 +72,24 @@ class SignIn extends React.Component {
               <FormH1>Register your account</FormH1>
 
               <FormLabel htmlFor="for">First Name</FormLabel>
-              <FormInput type="FirstName" required name="firstName"
-              value={this.state.firstName} onChange={this.handleChange}/>
+              <FormInput type="text" required name="firstName"
+              value={this.state.firstName} />
 
               <FormLabel htmlFor="for">Last Name</FormLabel>
-              <FormInput type="LastName" required name="lastName"
-              value={this.state.lastName} onChange={this.handleChange}/>
+              <FormInput type="text" required name="lastName"
+              value={this.state.lastName} />
 
               <FormLabel htmlFor="for">Username</FormLabel>
-              <FormInput type="Username" required name="username"
-              value={this.state.username} onChange={this.handleChange}/>
+              <FormInput type="text" required name="username"
+              value={this.state.username} />
 
               <FormLabel htmlFor="for">Email</FormLabel>
               <FormInput type="email" required name="email"
-              value={this.state.email} onChange={this.handleChange}/>
+              value={this.state.email} />
 
               <FormLabel htmlFor="for">Password</FormLabel>
               <FormInput type="password" required name="password"
-              value={this.state.password} onChange={this.handleChange}/>
+              value={this.state.password} />
 
               <NavBtnLink type="submit">
                 Continue
