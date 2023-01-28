@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { withRouter } from "react-router-dom";
 import React from "react";
 import {
@@ -15,85 +16,88 @@ import {
   NavBtnLink,
   baseUrl,
 } from "./SigninElements";
-import axios from 'axios'
+import axios from "axios";
 
+const SignIn = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: "",
+  });
 
+  //assigns user input to object attribute to be sent out
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      FirstName: 'Jon',
-      LastName: 'Doe',
-      Username: 'johndoe',
-      Email: 'johndoe@example.com',
-      Password: 'password',
-    };
-  }
-
-    //assigns user input to object attribute to be sent out
-    handleChange = (event) => {
-      const { name, value } = event.target;
-      this.setState({ [name]: value });
-    }
-
-
-
-    handleSubmit = (event) => {
-      event.preventDefault();
-      const user = {
-          FirstName: this.state.firstName,
-          LastName: this.state.lastName,
-          Username: this.state.username,
-          Email: this.state.email,
-          Password: this.state.password,
-      };
-      axios.post(baseUrl + 'api/Users', user)
-      .then(response => {
-          console.log('Success:', response.data);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post(baseUrl + "api/Users", formData)
+      .then((response) => {
+        console.log("Success:", response.data);
       })
-      .catch(error => {
-          console.error('Error:', error);
+      .catch((error) => {
+        console.error("Error:", error);
       });
-      console.log(this.state.FirstName)
-  }
-  
-  render() {
+  };
+
   return (
     <>
-
-
       <Container>
-        
         <FormWrap>
           <FormContent>
-            <Form action="#" onSubmit={this.handleSubmit}>
+            <Form action="#" onSubmit={handleSubmit}>
               <FormH1>Register your account</FormH1>
-
               <FormLabel htmlFor="for">First Name</FormLabel>
-              <FormInput type="text" required name="firstName"
-              value={this.state.firstName} />
+              <FormInput
+                type="text"
+                required
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+              />
 
               <FormLabel htmlFor="for">Last Name</FormLabel>
-              <FormInput type="text" required name="lastName"
-              value={this.state.lastName} />
+              <FormInput
+                type="text"
+                required
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+              />
 
               <FormLabel htmlFor="for">Username</FormLabel>
-              <FormInput type="text" required name="username"
-              value={this.state.username} />
+              <FormInput
+                type="text"
+                required
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+              />
 
               <FormLabel htmlFor="for">Email</FormLabel>
-              <FormInput type="email" required name="email"
-              value={this.state.email} />
+              <FormInput
+                type="email"
+                required
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
 
               <FormLabel htmlFor="for">Password</FormLabel>
-              <FormInput type="password" required name="password"
-              value={this.state.password} />
+              <FormInput
+                type="password"
+                required
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
 
-              <NavBtnLink type="submit">
-                Continue
-              </NavBtnLink>
+              <FormButton>Continue</FormButton>
 
               <Text>Forgot password</Text>
             </Form>
@@ -102,7 +106,6 @@ class SignIn extends React.Component {
       </Container>
     </>
   );
-};
 };
 
 export default SignIn;
