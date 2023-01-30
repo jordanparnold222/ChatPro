@@ -7,6 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ChatPro;
 using ChatPro.Models;
+using Microsoft.Data.SqlClient;
+using System.Drawing;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace ChatPro.Controllers
 {
@@ -15,95 +22,66 @@ namespace ChatPro.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IMSocialDBContext _context;
+        private readonly IConfiguration _config;
 
-        public UsersController(IMSocialDBContext context)
+        public UsersController(IMSocialDBContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
 
-        // GET: api/Users
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUser()
-        {
-            return await _context.User.ToListAsync();
-        }
-
-        // GET: api/Users/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
-        {
-            var user = await _context.User.FindAsync(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return user;
-        }
-
-        // PUT: api/Users/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
-        {
-            if (id != user.ID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(user).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-        
-
-        // POST: api/Users
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        [Route("registration")]
+        public async Task<IActionResult> Registration(User User)
         {
-            _context.User.Add(user);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetUser", new { id = user.ID }, user);
-        }
-
-        // DELETE: api/Users/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(int id)
-        {
-            var user = await _context.User.FindAsync(id);
-            if (user == null)
+            // Validate input
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return BadRequest(ModelState);
             }
 
-            _context.User.Remove(user);
+            // Insert User
+            _context.User.Add(User);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Registration Successful");
         }
 
-        private bool UserExists(int id)
+        [HttpPost]
+        [Route("signin")]
+        public async Task<IActionResult> SignIn(SignInModel model)
         {
-            return _context.User.Any(e => e.ID == id);
+            // Validate input
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // Authenticate user
+            var user = await _context.User.SingleOrDefaultAsync(u => u.Username == model.Email && u.Password == model.Password);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            // Generate JWT
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, model.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
+                _config["Jwt:Issuer"],
+                claims,
+                expires: DateTime.Now.AddMinutes(30),
+                signingCredentials: creds);
+
+            return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
         }
     }
 }
+
