@@ -17,3 +17,8 @@ API/ChatPro/ChatPro/bin/Debug/net6.0/ChatPro.pdb
 API/ChatPro/ChatPro/obj/Debug/net6.0/ChatPro.assets.cache
 API/ChatPro/ChatPro/obj/Debug/net6.0/ChatPro.dll
 API/ChatPro/ChatPro/obj/Debug/net6.0/ChatPro.pdb
+API/ChatPro/ChatPro/obj/Debug/net6.0/project.razor.json
+*.cache
+*.cache
+API/ChatPro/.vs/ChatPro/v17/.suo
+*.editorconfig
