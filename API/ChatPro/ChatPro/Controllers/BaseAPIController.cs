@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ChatPro.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class BaseAPIController : ControllerBase
     {
 

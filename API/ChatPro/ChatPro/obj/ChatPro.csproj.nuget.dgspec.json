@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Jordan\\Documents\\GitHub\\IMSocial\\api\\chatpro\\chatpro\\ChatPro.csproj": {}
+    "E:\\Jordan\\Documents\\GitHub\\IMSocial\\API\\ChatPro\\ChatPro\\ChatPro.csproj": {}
   },
   "projects": {
-    "E:\\Jordan\\Documents\\GitHub\\IMSocial\\api\\chatpro\\chatpro\\ChatPro.csproj": {
+    "E:\\Jordan\\Documents\\GitHub\\IMSocial\\API\\ChatPro\\ChatPro\\ChatPro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Jordan\\Documents\\GitHub\\IMSocial\\api\\chatpro\\chatpro\\ChatPro.csproj",
+        "projectUniqueName": "E:\\Jordan\\Documents\\GitHub\\IMSocial\\API\\ChatPro\\ChatPro\\ChatPro.csproj",
         "projectName": "ChatPro",
-        "projectPath": "E:\\Jordan\\Documents\\GitHub\\IMSocial\\api\\chatpro\\chatpro\\ChatPro.csproj",
+        "projectPath": "E:\\Jordan\\Documents\\GitHub\\IMSocial\\API\\ChatPro\\ChatPro\\ChatPro.csproj",
         "packagesPath": "C:\\Users\\pjord\\.nuget\\packages\\",
-        "outputPath": "E:\\Jordan\\Documents\\GitHub\\IMSocial\\api\\chatpro\\chatpro\\obj\\",
+        "outputPath": "E:\\Jordan\\Documents\\GitHub\\IMSocial\\API\\ChatPro\\ChatPro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.13, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.2, )"
@@ -88,8 +92,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -101,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     }

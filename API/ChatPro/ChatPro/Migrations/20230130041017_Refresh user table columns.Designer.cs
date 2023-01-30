@@ -2,6 +2,7 @@
 using ChatPro;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChatPro.Migrations
 {
     [DbContext(typeof(IMSocialDBContext))]
-    partial class IMSocialDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230130041017_Refresh user table columns")]
+    partial class Refreshusertablecolumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
